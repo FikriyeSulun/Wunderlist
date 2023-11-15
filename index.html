@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/wunderlist.js" defer></script>
+    <title>Wunderlist</title>
+    <style>
+        .ToDoList {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+
+
+        #TodoForm {
+            width: -webkit-fill-available;
+            margin: 0;
+        }
+
+        input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .addAToDo {
+            background-color: #53617f;
+            color: white;
+        }
+
+        input::placeholder {
+            color: white;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+
+
+
+
+        input[type="checkbox"]:checked+label {
+            text-decoration: line-through;
+        }
+
+        button {
+            padding: 5px;
+        }
+
+        label {
+            user-select: none;
+        }
+
+        li input[type="text"] {
+            display: none
+        }
+
+        .onEdit input[type="text"] {
+            display: inline;
+        }
+
+        .onEdit label {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+
+
+        .todoContainer {
+            width: 500px;
+        }
+
+        .detailPanel {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .todoContainerTitle{
+            display: flex;
+            gap: 10px;
+        }
+        .userNameDiv{
+            padding: 10px 0px;
+        }
+        .descriptionDiv{
+            padding: 10px 0px;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+        }
+        .saveButton{
+            float: right;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="lists">
+            <div class="search todoListsSection jcsb">
+                <a href="#"><img src="assets/img/menu-4-64.ico" alt=""></a>
+                <img src="assets/img/search-13-64.ico" alt="">
+            </div>
+            <div class="profile todoListsSection jcsb">
+                <div class="informationProfile">
+                    <a href="#" class="informationProfile">
+                        <img id="user" src="assets/img/user.png" alt="">
+                        <h3>Fikriye</h3>
+                        <img id="chevronDown" src="assets/img/chevron-down.png" alt="">
+                    </a>
+                </div>
+                <div class="notifications">
+                    <a href="#"><img src="assets/img/bell.png" alt=""></a>
+                    <a href="#"><img src="assets/img/speech-bubble.png" alt=""></a>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="inbox todoListsSection">
+                    <img src="assets/img/inbox.png" alt="">
+                    <h3>Inbox</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="assignedToMe todoListsSection">
+                    <img src="assets/img/assigned.png" alt="">
+                    <h3>Assigned to me</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="starred todoListsSection">
+                    <img src="assets/img/star (1).png" alt="">
+                    <h3>Starred</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="today todoListsSection">
+                    <img src="assets/img/today.png" alt="">
+                    <h3>Today</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="week todoListsSection">
+                    <img src="assets/img/calendar-week.svg" alt="">
+                    <h3>Week</h3>
+                </a>
+            </div>
+        </div>
+        <div class="selectedList">
+            <div class="selectedListName">
+                <h2>Week</h2>
+            </div>
+            <div class="ToDoList">
+                <form id="TodoForm" name="TodoForm" method="post" autocomplete="off">
+                    <input class="addAToDo" type="text" name="Todo" required placeholder="Add a to-do...">
+                </form>
+                <ul class="todoList"></ul>
+            </div>
+        </div>
+        <div class="todoContainer">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
